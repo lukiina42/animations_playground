@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Reem+Kufi+Fun&display=swap');
+
+body {
+    background-color: rgb(31, 30, 30);
+    color: #ffffff;
+    font-family: 'Reem Kufi Fun', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.sectionContent {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.hidden.intro {
+    transform: translateX(0);
+    transition: all 1.5s;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 2.5s;
+}
+
+.hidden.link {
+    filter: blur(
+        0
+    );
+}
+
+.hidden.arrow.intro {
+    transition-delay: 2000ms;
+    filter: blur(0);
+}
+
+#arrows {
+    animation: bounce 2s infinite 3.5s;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#arrows:hover {
+    cursor: pointer;
+}
+
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-20px);}
+	60% {transform: translateY(-10px);}
+}
+
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+
+#links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: 25vw;
+}
+
+.show {
+    filter: blur(0);
+    transform: translateX(0);
+    opacity: 1;
+}
+
+@media(max-width: 840px) {
+    #links {
+        min-width: 40vw;
+    }
+}
+
+@media(max-width: 420px) {
+    #links {
+        min-width: 60vw;
+    }
+}
+
+.link:nth-child(1) {
+    transition-delay: 200ms;
+}
+
+.link:nth-child(2) {
+    transition-delay: 400ms;
+}
+
+.link:nth-child(3) {
+    transition-delay: 600ms;
+}
