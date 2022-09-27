@@ -87,13 +87,13 @@ section {
 
 @media(max-width: 840px) {
     #links {
-        min-width: 40vw;
+        min-width: 55vw;
     }
 }
 
 @media(max-width: 420px) {
     #links {
-        min-width: 60vw;
+        min-width: 80vw;
     }
 }
 
@@ -151,4 +151,10 @@ section {
   #flamingoWithEyes:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
+  }
+
+  @media (orientation: portrait) {
+    #flamingoWithEyes {
+        visibility: hidden;
+    }
   }
