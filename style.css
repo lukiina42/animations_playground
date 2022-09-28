@@ -1,11 +1,52 @@
 @import url('https://fonts.googleapis.com/css?family=Reem+Kufi+Fun&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: rgb(31, 30, 30);
     color: #ffffff;
     font-family: 'Reem Kufi Fun', sans-serif;
     padding: 0;
     margin: 0;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    padding-right: 100px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+
+.headerLinkWrapper {
+    height:100%;
+    padding:0 50px 0 50px;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    transition: 0.5s all
+}
+
+.headerLinkWrapper:hover {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.headerLink {
+    text-decoration: none;
+    color: rgb(31, 30, 30);
+    width: 100%;
+}
+
+#lastLinkHeader {
+    margin-right: 100px;
 }
 
 section {
@@ -96,6 +137,16 @@ section {
         min-width: 80vw;
     }
 }
+
+@media(max-width: 570px) {
+    .headerLink{
+        padding:0 10px 0 10px;
+    }
+    #lastLinkHeader {
+        margin-right: 0px;
+    }
+}
+
 
 .link {
     transition-delay: calc(200ms * var(--order));
