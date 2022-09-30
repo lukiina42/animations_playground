@@ -19,7 +19,6 @@
     })
 })();
 
-
 (function flamingoSetup(){
 
     const flamingo = document.getElementById("flamingoWithEyes")
@@ -62,7 +61,7 @@
         })
     })
 
-    document.addEventListener('scroll', (e) => {
+    function hideFlamingo() {
         flamingo.classList.remove('onlyEyes');
         if(!flamingoHidden){
             let number = Math.random() * 10000 + 5000 //random hidey hidey time :)
@@ -72,8 +71,30 @@
             }, number)
         }
         flamingoHidden = true
+    }
+
+    document.addEventListener('scroll', (e) => {
+        hideFlamingo()
     })
     
 })()
 
+document.getElementById('hideHeader').addEventListener('click', function hideHeader(event){
+    const spriteMan = document.getElementById("spriteContainer")
+    spriteMan.classList.add('run')
+    document.getElementById("header").classList.add('move')
+    setTimeout(function stopTheSpriteMan(){
+        spriteMan.classList.add('rotate')
+        spriteMan.classList.add('stop')
+    }, 2000)
+})
 
+document.getElementById("spriteContainer").addEventListener('click', function returnHeader(event){
+    const spriteMan = document.getElementById("spriteContainer")
+    spriteMan.classList.remove('stop')
+    spriteMan.classList.remove('run')
+    document.getElementById("header").classList.remove('move')
+    setTimeout(function rotateSpriteManBack(){
+        spriteMan.classList.remove('rotate')
+    }, 2000)
+})
