@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Flamingo!</title>
 
     <link rel="stylesheet" href="style.css">
     <script defer src="app.js"></script>
 </head>
 <body>
+
+    <div id = "spriteContainer" class="spriteManContainer"></div>
+
     <header id="header" class="headerClass">
         <div class="headerButtonWrapper">
             <button id="hideHeader" class="hideHeaderButton"><span class="text">How about hide this header?</span><span>Let the little man help you!</span></button>
@@ -59,12 +62,104 @@
     </section>
 
     <section id="section2">
-        
+        <div class="aboutWrapper">
+            <div class = "hiddenLeft aboutCard" style="--orderCard: 1;">
+                <div class="cardHeader">Education</div>
+                <div class="cardContent">
+                    <ul>
+                        <li>Czech Technical University in Prague, Faculty of Electrical Engineering.
+                            <ul>
+                                <li>
+                                    Program Software Engineering and Technologies
+                                </li>
+                                <li>
+                                    Interesting subjects such as:
+                                    <ul>
+                                        <li>
+                                            Object Design and Modelling
+                                        </li>
+                                        <li>
+                                            Client Applications in JavaScript
+                                        </li>
+                                        <li>
+                                            Enterprise Architectures (Spring)
+                                        </li>
+                                        <li>
+                                            Managing Software Projects
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <li>Currently studying at Prague University of Economics and Business, Faculty of Informatics and Statistics
+                        <ul>
+                            <li>
+                                Program Knowledge and Web Technologies
+                            </li>
+                            <li>
+                                At the moment I am in the first semester
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            <div class = "hiddenRight aboutCard" style="--orderCard: 1;">
+                <div class="cardHeader">Hobbies</div>
+                <div class="cardContent">
+                    <ul>
+                        <li>
+                            Calisthenics - I usually set some skill as a goal and then strive towards it. An example can be seen at the picture
+                        </li>
+                        <li>
+                            I've played tennis at a high level since I was 5 - won a region cup and still play in a competitive team
+                        </li>
+                        <li>
+                            I like other racket sports such as badminton, table tennis and squash
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class = "hiddenLeft aboutCard" style="--orderCard: 2;">
+                <div class="cardHeader">Work</div>
+                <div class="cardContent">
+                    <ul>
+                        <li>
+                            Full stack developer intern at SAP Concur since 5/2021
+                        </li>
+                        <li>
+                            Part of Quality Assurance team, which creates internal web dashboards
+                            containing all the details about testing of the Concur application
+                        </li>
+                        <li>
+                            Main technologies I work with consist of: 
+                            <ul>
+                                <li>
+                                    JavaScript with library React
+                                </li>
+                                <li>
+                                    Java with Spring
+                                </li>
+                                <li>
+                                    Docker
+                                </li>
+                                <li>
+                                    AWS - don't really work with that yet
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class = "hiddenRight aboutCard" style="--orderCard: 2;">
+                <div class="cardHeader">Me doing back lever</div>
+                <div class="cardContent pictureCard">
+                    <img height="95%" class="backLeverImg" title="back lever by me" src="/img/backLever.jpeg">
+                </div>
+            </div>
+        </div>
     </section>
-
-    <div id = "spriteContainer" class="spriteManContainer">
-
-    </div>
 
     <div id="flamingoWithEyes">
         <span class="tooltiptext">Flamingos are baes &hearts;</span>

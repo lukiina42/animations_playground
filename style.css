@@ -2,6 +2,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -152,6 +153,20 @@ section {
     transition: all 2.5s;
 }
 
+.hiddenLeft {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1.5s;
+}
+
+.hiddenRight {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(+100%);
+    transition: all 1.5s;
+}
+
 .hidden.link {
     filter: blur(
         0
@@ -182,7 +197,7 @@ section {
 }
 
 @media(prefers-reduced-motion) {
-    .hidden {
+    .hidden, .hiddenRight {
         transition: none;
     }
 }
@@ -198,30 +213,9 @@ section {
 .show {
     filter: blur(0);
     transform: translateX(0);
+    transform: translateY(0);
     opacity: 1;
 }
-
-@media(max-width: 840px) {
-    #links {
-        min-width: 55vw;
-    }
-}
-
-@media(max-width: 420px) {
-    #links {
-        min-width: 80vw;
-    }
-}
-
-@media(max-width: 570px) {
-    .headerLink{
-        padding:0 10px 0 10px;
-    }
-    #lastLinkHeader {
-        margin-right: 0px;
-    }
-}
-
 
 .link {
     transition-delay: calc(200ms * var(--order));
@@ -277,12 +271,6 @@ section {
 #flamingoWithEyes:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
-}
-
-@media (orientation: portrait) {
-#flamingoWithEyes {
-    visibility: hidden;
-}
 }
 
 .spriteManContainer {
@@ -355,3 +343,103 @@ section {
         background-position: 195px 0;
     }
 }  */
+
+
+.aboutWrapper {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    align-content: space-around;
+    flex-wrap: wrap;
+}
+
+.aboutCard {
+    width: 40%;
+    background-color: rgb(41, 39, 39);
+    height: 40vh;
+    min-height: 250px;
+    border-radius: 35px;
+    margin: 10px;
+    transition-delay: calc(400ms * var(--orderCard));
+}
+
+.emptyContent {
+    background-color: rgb(31, 30, 30);
+}
+
+.cardHeader {
+    height: 10%;
+    font-size: 20px;
+    border-bottom: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardContent {
+    margin: 10px;
+    height: 90%;
+}
+
+.pictureCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.backLeverImg {
+    height: 95%;
+}
+
+@media(max-width: 840px) {
+    #links {
+        min-width: 55vw;
+    }
+}
+
+@media(max-width: 420px) {
+    #links {
+        min-width: 80vw;
+    }
+}
+
+@media(max-width: 570px) {
+    .headerLink{
+        padding:0 10px 0 10px;
+    }
+    #lastLinkHeader {
+        margin-right: 0px;
+    }
+}
+
+@media(max-width: 920px) {
+    .headerButtonWrapper {
+        visibility: hidden;
+    }
+}
+
+@media(max-width: 850px) {
+    .aboutWrapper {
+        flex-direction: column;
+    }
+
+    .aboutCard {
+        width: 90%;
+    }
+}
+
+@media (orientation: portrait) {
+    #flamingoWithEyes, header, .spriteManContainer {
+        visibility: hidden;
+    }
+}
+
+@media(max-height: 500px) {
+    header, .spriteManContainer {
+        visibility: hidden;
+    }
+}

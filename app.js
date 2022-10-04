@@ -4,13 +4,11 @@
         entries.forEach((entry) => {
             if(entry.isIntersecting) {
                 entry.target.classList.add('show')
-            } else {
-                entry.target.classList.remove('show')
             }
         })
     })
 
-    const hiddenElements = document.querySelectorAll('.hidden')
+    const hiddenElements = document.querySelectorAll('.hidden,.hiddenRight,.hiddenLeft')
     hiddenElements.forEach((el) => observer.observe(el))
 
      //Arrows appearing and behavior
@@ -77,7 +75,9 @@
         hideFlamingo()
     })
     
-})()
+})();
+
+(function headerSetup(){
 
 document.getElementById('hideHeader').addEventListener('click', function hideHeader(event){
     const spriteMan = document.getElementById("spriteContainer")
@@ -98,3 +98,5 @@ document.getElementById("spriteContainer").addEventListener('click', function re
         spriteMan.classList.remove('rotate')
     }, 2000)
 })
+
+})()
