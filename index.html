@@ -14,17 +14,24 @@
     <div id = "spriteContainer" class="spriteManContainer"></div>
 
     <header id="header" class="headerClass">
-        <div class="headerButtonWrapper">
-            <button id="hideHeader" class="hideHeaderButton"><span class="text">How about hide this header?</span><span>Let the little man help you!</span></button>
+        <div class="headerSection">
+            <div class="headerButtonWrapper">
+                <button id="hideHeader" class="hideHeaderButton"><span class="text">How about hide this header?</span><span>Let the little man help you!</span></button>
+            </div>
+            <div class="headerButtonWrapper">
+                <button id="shootFlamingo" class="hideHeaderButton"><span class="text">Hide the flamingo?</span><span>This might kill him :(</span></button>
+            </div>
         </div>
-        <div class="headerLinkWrapper">
-            <a class="headerLink" href="#introSection">Home</a>
-        </div>
-        <div class="headerLinkWrapper">
-            <a class="headerLink" href="#section2">About</a>
-        </div>
-        <div class="headerLinkWrapper">
-            <a id="lastLinkHeader" class="headerLink" href="#section2">Placeholder</a>
+        <div class="headerSection">
+            <div class="headerLinkWrapper">
+                <a class="headerLink" href="#introSection">Home</a>
+            </div>
+            <div class="headerLinkWrapper">
+                <a class="headerLink" href="#section2">About</a>
+            </div>
+            <div class="headerLinkWrapper">
+                <a id="lastLinkHeader" class="headerLink" href="#section2">Placeholder</a>
+            </div>
         </div>
     </header>
 
@@ -72,36 +79,25 @@
                                 <li>
                                     Program Software Engineering and Technologies
                                 </li>
+                                <ul>
+                                    <li>
+                                        Focus on creating clean model and design of the application before implementing it. 
+                                    </li>
+                                    <li>
+                                        Technologies: Java Spring, HTML CSS JS, C++ and python basics
+                                    </li>
+                                </ul>
+                            </ul>
+                        </li>
+                    
+                        <li>Currently studying at Prague University of Economics and Business, Faculty of Informatics and Statistics
+                            <ul>
                                 <li>
-                                    Interesting subjects such as:
-                                    <ul>
-                                        <li>
-                                            Object Design and Modelling
-                                        </li>
-                                        <li>
-                                            Client Applications in JavaScript
-                                        </li>
-                                        <li>
-                                            Enterprise Architectures (Spring)
-                                        </li>
-                                        <li>
-                                            Managing Software Projects
-                                        </li>
-                                    </ul>
+                                    Program Knowledge and Web Technologies
                                 </li>
                             </ul>
                         </li>
                     </ul>
-                    <li>Currently studying at Prague University of Economics and Business, Faculty of Informatics and Statistics
-                        <ul>
-                            <li>
-                                Program Knowledge and Web Technologies
-                            </li>
-                            <li>
-                                At the moment I am in the first semester
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
                 </div>
             </div>
@@ -174,5 +170,9 @@
         </div>
     </div>
 
+    <div id="shootingLadySelect" class="shootingLady">
+        <img alt="shooting lady" class="onlyLady" src="img/shootingLady.png">
+        <img alt="bullet" id="bulletSelect" class="bullet" src="img/bullet.png">
+    </div>
 </body>
 </html>

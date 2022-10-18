@@ -4,6 +4,11 @@
         entries.forEach((entry) => {
             if(entry.isIntersecting) {
                 entry.target.classList.add('show')
+                if(entry.target.classList.contains('aboutCard')){
+                    setTimeout(() => {
+                        entry.target.classList.add('noTransition')
+                    }, 3000)
+                }
             }
         })
     })
@@ -18,12 +23,15 @@
 })();
 
 (function flamingoSetup(){
-
+    const killFlamingoButton = document.getElementById("shootFlamingo")
     const flamingo = document.getElementById("flamingoWithEyes")
     let flamingoHidden = false
 
     setTimeout(() => {
         flamingo.classList.add('onlyEyes')
+        setTimeout(() => {
+            killFlamingoButton.classList.add('available')
+        }, 2000)
     }, 5000)
 
     flamingo.addEventListener('mouseover', (e) => {
@@ -61,10 +69,12 @@
 
     function hideFlamingo() {
         flamingo.classList.remove('onlyEyes');
+        killFlamingoButton.classList.remove('available')
         if(!flamingoHidden){
             let number = Math.random() * 10000 + 5000 //random hidey hidey time :)
             setTimeout(() => {
                 flamingo.classList.add('onlyEyes')
+                killFlamingoButton.classList.add('available')
                 flamingoHidden = false
             }, number)
         }
@@ -79,24 +89,47 @@
 
 (function headerSetup(){
 
-document.getElementById('hideHeader').addEventListener('click', function hideHeader(event){
-    const spriteMan = document.getElementById("spriteContainer")
-    spriteMan.classList.add('run')
-    document.getElementById("header").classList.add('move')
-    setTimeout(function stopTheSpriteMan(){
-        spriteMan.classList.add('rotate')
-        spriteMan.classList.add('stop')
-    }, 2000)
-})
+    document.getElementById('hideHeader').addEventListener('click', function hideHeader(event){
+        const spriteMan = document.getElementById("spriteContainer")
+        spriteMan.classList.add('run')
+        document.getElementById("header").classList.add('move')
+        setTimeout(function stopTheSpriteMan(){
+            spriteMan.classList.add('rotate')
+            spriteMan.classList.add('stop')
+        }, 2000)
+    })
 
-document.getElementById("spriteContainer").addEventListener('click', function returnHeader(event){
-    const spriteMan = document.getElementById("spriteContainer")
-    spriteMan.classList.remove('stop')
-    spriteMan.classList.remove('run')
-    document.getElementById("header").classList.remove('move')
-    setTimeout(function rotateSpriteManBack(){
-        spriteMan.classList.remove('rotate')
-    }, 2000)
-})
+    document.getElementById("spriteContainer").addEventListener('click', function returnHeader(event){
+        const spriteMan = document.getElementById("spriteContainer")
+        spriteMan.classList.remove('stop')
+        spriteMan.classList.remove('run')
+        document.getElementById("header").classList.remove('move')
+        setTimeout(function rotateSpriteManBack(){
+            spriteMan.classList.remove('rotate')
+        }, 2000)
+    })
 
-})()
+})();
+
+(function shootingLadySetup(){
+    const shootingLadyElement = document.getElementById('shootingLadySelect')
+    const bulletElement = document.getElementById("bulletSelect")
+    const killFlamingoButton = document.getElementById("shootFlamingo")
+    killFlamingoButton.addEventListener('click', function returnHeader(event){
+        shootingLadyElement.classList.add('visible')
+        killFlamingoButton.style.display = "none"
+        setTimeout(() => {
+            document.getElementById("bulletSelect").classList.add("displayBlock")
+            setTimeout(() => {
+                document.getElementById("bulletSelect").classList.add("shoot")
+                setTimeout(() => {
+                    document.getElementById("flamingoWithEyes").classList.add('killed')
+                    setTimeout(() => {
+                        shootingLadyElement.classList.remove('visible')
+                        bulletElement.classList.remove('displayBlock')
+                    }, 1000)
+                }, 1000)
+            }, 10)
+        }, 2000)
+    })
+})();
